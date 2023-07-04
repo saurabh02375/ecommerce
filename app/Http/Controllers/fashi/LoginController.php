@@ -30,7 +30,7 @@ class LoginController extends Controller
 
             $otp    =   User::where('validate_string', $validate_string)->where('verification_code', $request->input('otp'))->first();
 
-
+            //test
 
             if (empty($otp)) {
                 session()->flash('error', 'Otp is not correct');
