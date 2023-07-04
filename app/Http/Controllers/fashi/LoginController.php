@@ -25,6 +25,7 @@ class LoginController extends Controller
         if ($request->isMethod('post')) {
             $request->validate([
                 'otp' => 'required',
+
             ]);
 
             $otp    =   User::where('validate_string', $validate_string)->where('verification_code', $request->input('otp'))->first();
